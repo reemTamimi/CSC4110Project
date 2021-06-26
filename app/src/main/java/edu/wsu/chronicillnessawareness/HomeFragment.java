@@ -1,5 +1,6 @@
 package edu.wsu.chronicillnessawareness;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +25,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Button JoinGroup;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -55,10 +59,40 @@ public class HomeFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button JoinGroupBtn = (Button) view.findViewById(R.id.JoinGroupBtn);
+        JoinGroupBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new Intent(getActivity(), JoinGroup.class);
+                startActivity(in);
+            }
+        });
+
+        Button CreateGroupBtn = (Button) view.findViewById(R.id.CreateGroupBtn);
+        CreateGroupBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new Intent(getActivity(), CreateGroup.class);
+                startActivity(in);
+            }
+        });
+
+        Button ShareExperienceBtn = (Button) view.findViewById(R.id.ShareExperienceBtn);
+        ShareExperienceBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new Intent(getActivity(), ShareExperience.class);
+                startActivity(in);
+            }
+        });
+
+        return view;
     }
 }

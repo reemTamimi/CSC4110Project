@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-package edu.wsu.chronicillnessawareness;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-=======
 package edu.wsu.chronicillnessawareness;
 
 import androidx.annotation.NonNull;
@@ -63,5 +48,4 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
->>>>>>> cd233ae (Login/Register/Home Page)
 }
