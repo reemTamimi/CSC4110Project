@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Chronic Illness Awareness</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="SignUp">SignUp</string>
+    <string name="FullName">FullName</string>
+    <string name="Email">Email</string>
+    <string name="loginhere">Already have an account? <u>Login</u></string>
+    <string name="signuphere">Create a new account? SignUp</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+</resources>
