@@ -28,9 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:fontFamily="@font/poppinsbold"
-        android:shadowColor="#0B657C"
+        android:shadowColor="#367A8C"
         android:text="Fatima Rahman"
         android:textSize="25sp"
+        android:textColor="#084C46"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:textStyle="bold"/>
