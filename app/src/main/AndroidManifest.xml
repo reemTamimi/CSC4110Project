@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <uses-feature android:name="android.hardware.type.watch" />
 
     <application
         android:allowBackup="true"
@@ -22,8 +23,8 @@
             android:value="true" />
 
         <activity
-            android:name=".Login"
-            android:label="@string/Login">
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUp" />
-        <activity android:name=".ForgotPasswordActivity">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

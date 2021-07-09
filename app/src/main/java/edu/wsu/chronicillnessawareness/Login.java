@@ -16,6 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import org.w3c.dom.Text;
 
+import edu.wsu.chronicillnessawareness.Posts.Home;
+
 public class Login extends AppCompatActivity {
 
     TextInputEditText textInputEditTextUsername, textInputEditTextPassword;
@@ -54,7 +56,7 @@ public class Login extends AppCompatActivity {
                     ed_password.setError("password is missing");
                     return;
                 }
-                Intent intent = new Intent(Login.this,MainActivity.class);
+                Intent intent = new Intent(Login.this, Home.class);
                 startActivity(intent);
 
 
