@@ -19,6 +19,7 @@
             android:layout_height="150dp"
             android:src="@drawable/profile"
             android:background="@drawable/ocean"
+            android:scaleType="centerInside"
             android:layout_centerInParent="true"/>
 
     </RelativeLayout>
@@ -30,6 +31,18 @@
         android:fontFamily="@font/poppinsbold"
         android:shadowColor="#367A8C"
         android:text="Fatima Rahman"
+        android:textSize="25sp"
+        android:textColor="#084C46"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppinsbold"
+        android:shadowColor="#367A8C"
+        android:text="New York,USA"
         android:textSize="25sp"
         android:textColor="#084C46"
         android:layout_gravity="center"
