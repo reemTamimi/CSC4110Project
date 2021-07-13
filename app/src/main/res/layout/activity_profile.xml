@@ -13,14 +13,18 @@
         android:background="@drawable/ocean"
         android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/profile"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="64dp"
             android:src="@drawable/profile"
             android:background="@drawable/ocean"
-            android:scaleType="centerInside"
-            android:layout_centerInParent="true"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
 
     </RelativeLayout>
 
