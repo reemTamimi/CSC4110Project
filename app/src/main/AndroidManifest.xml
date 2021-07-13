@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <uses-feature android:name="android.hardware.type.watch" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChronicIllnessAwareness">
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".ForgotPasswordActivity"></activity>
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -23,8 +22,8 @@
             android:value="true" />
 
         <activity
-            android:name=".ForgotPasswordActivity"
-            android:label="@string/title_activity_forgot_password">
+            android:name=".Profile"
+            android:label="Profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
