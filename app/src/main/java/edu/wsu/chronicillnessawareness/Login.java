@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
@@ -26,6 +27,8 @@ public class Login extends AppCompatActivity {
     TextView tv_registerlink;
      String username = "";
      String password = "";
+
+     //private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +70,22 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        
-
     }
+/*
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (currentUser != null)
+        {
+            SendUserToMainActivity();
+        }
+    }
+
+    private void SendUserToMainActivity() {
+        Intent loginIntent = new Intent(Login.this, MainActivity.class);
+        startActivity(loginIntent);
+    }
+
+ */
 }
