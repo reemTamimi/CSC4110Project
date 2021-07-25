@@ -1,3 +1,4 @@
+//RT
 package edu.wsu.chronicillnessawareness;
 
 import androidx.appcompat.app.AppCompatActivity;
