@@ -3,6 +3,7 @@ package edu.wsu.chronicillnessawareness;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.os.Bundle;
 
 public class Profile extends AppCompatActivity {
