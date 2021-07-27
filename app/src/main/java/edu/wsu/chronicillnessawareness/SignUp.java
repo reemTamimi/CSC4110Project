@@ -27,7 +27,13 @@ import java.util.Objects;
 
 
 public class SignUp extends AppCompatActivity {
-
+    private EditText mEmail;
+    private EditText mName;
+    private EditText mPassword;
+    private FirebaseAuth mAuth;
+    TextView textView2;
+    DatabaseReference reference;
+    ProgressBar progressBar2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
