@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private FirebaseUser currentUser;
 
 
     @Override
@@ -139,4 +140,18 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+/*
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (currentUser == null){
+            SendUserToLoginActivity();
+        }
+    }
+
+    private void SendUserToLoginActivity() {
+        Intent loginIntent = new Intent(MainActivity.this, Login.class);
+        startActivity(loginIntent);
+    }*/
 }

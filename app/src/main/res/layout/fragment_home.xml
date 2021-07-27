@@ -4,34 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
-    android:background="@color/white">
+    android:background="#B9DFF1">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
-    <Button
-        android:id="@+id/JoinGroupBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Join Group"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        />
-
-    <Button
-        android:id="@+id/CreateGroupBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Group"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
     <Button
         android:id="@+id/ShareExperienceBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Share"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        />
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="300dp"
+        android:text="Share" />
 </RelativeLayout>
