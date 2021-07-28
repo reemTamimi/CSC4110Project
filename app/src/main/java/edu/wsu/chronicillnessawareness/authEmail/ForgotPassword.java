@@ -40,3 +40,21 @@ public class ForgotPassword extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), SignIn.class );
             startActivity(intent);
         });
+        button.setOnClickListener(view -> {
+            progressBar4.setVisibility(View.VISIBLE);
+            String email = mEmail.getText().toString().trim();
+            if (TextUtils.isEmpty(email)){
+                Alerter.create(ForgotPassword.this)
+                        .setTitle("Error")
+                        .setIcon(R.drawable.ic_error)
+                        .setBackgroundColorRes(R.color.colorPrimary)
+                        .setDuration(10000)
+                        .setTitleTypeface(Typeface.createFromAsset(getAssets(), "bold.ttf"))
+                        .setTextTypeface(Typeface.createFromAsset(getAssets(), "med.ttf"))
+                        .enableSwipeToDismiss()
+                        .setText("Enter email")
+                        .show();
+                progressBar4.setVisibility(View.INVISIBLE);
+
+            }else {
+
