@@ -58,3 +58,42 @@ public class ForgotPassword extends AppCompatActivity {
 
             }else {
 
+                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Alerter.create(ForgotPassword.this)
+                                .setTitle("Sent")
+                                .setIcon(R.drawable.ic_check_wt)
+                                .setBackgroundColorRes(R.color.colorPrimary)
+                                .setDuration(10000)
+                                .enableSwipeToDismiss()
+                                .setText("Reset link is sent to your email")
+                                .show();
+                        new Handler().postDelayed(() -> {
+                            Intent intent = new Intent(getApplicationContext(), SignIn.class);
+                            startActivity(intent);
+                            finish();
+                            progressBar4.setVisibility(View.INVISIBLE);
+
+                        }, 3000);
+
+                    } else {
+                        String msg = Objects.requireNonNull(task.getException()).getMessage();
+                        Alerter.create(ForgotPassword.this)
+                                .setTitle("Error")
+                                .setIcon(R.drawable.ic_error)
+                                .setBackgroundColorRes(R.color.colorPrimary)
+                                .setDuration(10000)
+                                .setTitleTypeface(Typeface.createFromAsset(getAssets(), "bold.ttf"))
+                                .setTextTypeface(Typeface.createFromAsset(getAssets(), "med.ttf"))
+                                .enableSwipeToDismiss()
+                                .setText(Objects.requireNonNull(msg))
+                                .show();
+                        progressBar4.setVisibility(View.INVISIBLE);
+
+                    }
+                });
+            }
+        });
+    }
+}
+
