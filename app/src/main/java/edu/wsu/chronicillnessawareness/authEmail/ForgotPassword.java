@@ -30,3 +30,13 @@ public class ForgotPassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        progressBar4 = findViewById(R.id.progressBar4);
+        signIn = findViewById(R.id.textView5);
+        signUp = findViewById(R.id.textView6);
+        mAuth = FirebaseAuth.getInstance();
+        mEmail = findViewById(R.id.email);
+        button = findViewById(R.id.button5);
+        signIn.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), SignIn.class );
+            startActivity(intent);
+        });
