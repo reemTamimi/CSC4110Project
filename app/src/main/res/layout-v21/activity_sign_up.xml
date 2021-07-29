@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".authEmail.SignUp"
-    tools:ignore="Overdraw">
+    tools:context=".authEmail.SignUp">
 
     <Button
         android:id="@+id/button4"
@@ -16,23 +15,22 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/white_btn_round"
-        android:drawableEnd="@drawable/ic_next"
+        android:drawableRight="@drawable/ic_next"
         android:fontFamily="@font/bold"
-        android:paddingStart="15dp"
-        android:paddingEnd="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
         android:stateListAnimator="@null"
-        android:text="Proceed"
+        android:text="@string/proceed"
         android:textAlignment="textStart"
         android:textColor="#0047ab"
         android:textAllCaps="false"
-        tools:ignore="HardcodedText,SpUsage"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout7"
         app:layout_constraintVertical_bias="0.38"
-        tools:targetApi="lollipop" />
+        tools:ignore="RtlHardcoded" />
     <RelativeLayout
         android:id="@+id/relativeLayout8"
         android:layout_width="match_parent"
@@ -56,20 +54,19 @@
 
         <EditText
             android:background="#0000"
-            android:hint="Name"
+            android:hint="@string/name"
             android:textColor="#fff"
             android:id="@+id/name"
             android:textColorHint="#fff"
-            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:inputType="textVisiblePassword"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:fontFamily="@font/med"
-            tools:ignore="HardcodedText,SpUsage"
             android:maxLines="1"
-            android:layout_toEndOf="@+id/img_username"
+            android:layout_toRightOf="@+id/img_username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:importantForAutofill="no" />
+            tools:ignore="Autofill,RtlHardcoded" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/relativeLayout6"
@@ -96,20 +93,19 @@
 
         <EditText
             android:background="#0000"
-            android:hint="Email"
+            android:hint="@string/email"
             android:id="@+id/email"
             android:textColor="#fff"
             android:maxLines="1"
             android:inputType="textVisiblePassword|textEmailAddress"
             android:textColorHint="#fff"
-            android:textSize="25dp"
-            android:layout_marginEnd="10dp"
+            android:textSize="25sp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/med"
-            tools:ignore="HardcodedText,SpUsage"
-            android:layout_toEndOf="@+id/img_email"
+            android:layout_toRightOf="@+id/img_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:importantForAutofill="no" />
+            tools:ignore="Autofill,RtlHardcoded" />
 
 
     </RelativeLayout>
@@ -136,21 +132,20 @@
 
         <EditText
             android:background="#0000"
-            android:hint="Password"
+            android:hint="@string/password"
             android:textColor="#fff"
             android:textColorHint="#fff"
             android:tint="#fff"
-            android:textSize="25dp"
-            android:layout_marginEnd="10dp"
+            android:textSize="25sp"
+            android:layout_marginRight="10dp"
             android:maxLines="1"
-            tools:ignore="HardcodedText,SpUsage"
             android:inputType="textPassword"
             android:fontFamily="@font/med"
             android:id="@+id/password"
-            android:layout_toEndOf="@+id/img_password"
+            android:layout_toRightOf="@+id/img_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:importantForAutofill="no" />
+            tools:ignore="Autofill,RtlHardcoded" />
     </RelativeLayout>
 
 
@@ -168,12 +163,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:fontFamily="@font/bungee"
             android:text="@string/app_name"
             android:textColor="#fff"
-            tools:ignore="SpUsage"
-            android:textSize="45dp"
-             />
+            android:textSize="45sp"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/description"
@@ -181,12 +176,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/med"
-            android:text="Sign up to continue"
+            android:text="@string/sign_up_to_continue"
             android:textColor="#fff"
-            tools:ignore="HardcodedText,SpUsage"
-            android:textSize="20dp" />
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
 
     </RelativeLayout>
 
@@ -195,11 +191,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/med"
-        android:text="Privacy Policy"
+        android:text="@string/privacy_policy"
         android:textColor="#fff"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="HardcodedText,SpUsage"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
@@ -209,10 +204,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/med"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textColor="#fff"
-        android:textSize="18dp"
-        tools:ignore="HardcodedText,SpUsage"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline4"

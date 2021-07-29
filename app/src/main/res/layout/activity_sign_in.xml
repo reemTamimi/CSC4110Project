@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".Final"
+    tools:context=".authEmail.SignIn"
     tools:ignore="Overdraw">
+
+
 
     <Button
         android:id="@+id/button3"
@@ -22,11 +24,11 @@
         android:paddingStart="15dp"
         android:paddingEnd="10dp"
         android:stateListAnimator="@null"
-        android:text="Finish"
+        android:text="Sign in"
         android:textAlignment="textStart"
+        tools:ignore="HardcodedText,SpUsage"
         android:textColor="#0047ab"
         android:textSize="30dp"
-        tools:ignore="HardcodedText,SpUsage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,20 +58,21 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/contentdescription"
             android:padding="10dp"
-            android:src="@drawable/ic_namebt" />
+            android:src="@drawable/ic_mail_bt"
+            app:tint="#fff" />
 
 
         <EditText
             android:background="#0000"
-            android:hint="Name"
+            android:hint="Email"
             android:id="@+id/email"
             android:layout_marginEnd="10dp"
             android:maxLines="1"
             android:textColor="#fff"
-            android:inputType="textVisiblePassword"
+            android:inputType="textEmailAddress|textVisiblePassword"
             android:textColorHint="#fff"
-            tools:ignore="HardcodedText,SpUsage,TextFields"
             android:textSize="25dp"
+            tools:ignore="HardcodedText,SpUsage"
             android:fontFamily="@font/med"
             android:layout_toEndOf="@+id/img_username"
             android:layout_width="match_parent"
@@ -97,25 +100,25 @@
         <ImageView
             android:id="@+id/img_password"
             android:layout_width="50dp"
-            android:contentDescription="@string/contentdescription"
             android:layout_height="match_parent"
             android:padding="10dp"
-            android:src="@drawable/ic_user"
+            android:contentDescription="@string/contentdescription"
+            android:src="@drawable/ic_lock"
             app:tint="#fff" />
 
         <EditText
             android:background="#0000"
+            android:hint="Password"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
             android:layout_marginEnd="10dp"
             android:textSize="25dp"
-            android:fontFamily="@font/med"
-            tools:ignore="HardcodedText,SpUsage"
-            android:id="@+id/password"
-            android:hint="Username"
-            android:digits="abcdefghijklmnopqrstuvwxyz1234567890._"
-            android:inputType="textFilter|textVisiblePassword"
-            android:textColor="#fff"
             android:maxLines="1"
-            android:textColorHint="#fff"
+            android:tint="#fff"
+            tools:ignore="HardcodedText,SpUsage"
+            android:inputType="textPassword"
+            android:fontFamily="@font/med"
+            android:id="@+id/password"
             android:layout_toEndOf="@+id/img_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -138,10 +141,9 @@
             android:layout_marginStart="24dp"
             android:fontFamily="@font/bungee"
             android:text="@string/app_name"
-            android:textColor="#fff"
-            android:textSize="45dp"
             tools:ignore="SpUsage"
-            />
+            android:textColor="#fff"
+            android:textSize="45dp" />
 
         <TextView
             android:id="@+id/description"
@@ -150,34 +152,59 @@
             android:layout_below="@+id/title"
             android:layout_marginStart="24dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/med"
-            android:text="Almost there, one last step"
-            android:textColor="#fff"
             tools:ignore="HardcodedText,SpUsage"
+            android:fontFamily="@font/med"
+            android:text="Sign in to continue"
+            android:textColor="#fff"
             android:textSize="20dp" />
 
     </RelativeLayout>
 
 
     <TextView
+        android:id="@+id/forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bold"
+        tools:ignore="HardcodedText,SpUsage"
+        android:fontFamily="@font/med"
+        android:text="Forgot Password?"
         android:textColor="#fff"
-        tools:ignore="SpUsage"
-        android:textSize="20dp"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/med"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:textSize="18dp"
+        tools:ignore="HardcodedText,SpUsage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="203dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ProgressBar
-        android:id="@+id/progressBar5"
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:indeterminateOnly="true"
         android:visibility="invisible"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

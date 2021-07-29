@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".authEmail.Finish"
-    tools:ignore="Overdraw">
+    tools:context=".authEmail.Finish">
 
     <Button
         android:id="@+id/button2"
@@ -15,22 +14,21 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/white_btn_round"
-        android:drawableEnd="@drawable/ic_next"
+        android:drawableRight="@drawable/ic_next"
         android:fontFamily="@font/bold"
-        android:paddingStart="15dp"
+        android:paddingLeft="15dp"
         android:textAllCaps="false"
-        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
         android:stateListAnimator="@null"
-        android:text="Finish"
+        android:text="@string/finish"
         android:textAlignment="textStart"
         android:textColor="@color/colorPrimary"
-        android:textSize="30dp"
-        tools:ignore="HardcodedText,SpUsage"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
-        tools:targetApi="lollipop" />
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -48,19 +46,18 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/img_username"
+            android:layout_toRightOf="@+id/img_username"
             android:background="#0000"
             android:fontFamily="@font/med"
-            android:layout_marginEnd="10dp"
-            android:hint="Username"
+            android:layout_marginRight="10dp"
+            android:hint="@string/username"
             android:digits="abcdefghijklmnopqrstuvwxyz1234567890._"
             android:inputType="textFilter|textVisiblePassword"
             android:textColor="#fff"
             android:maxLines="1"
             android:textColorHint="#fff"
-            tools:ignore="HardcodedText,SpUsage"
-            android:textSize="25dp"
-            android:importantForAutofill="no" />
+            android:textSize="25sp"
+            tools:ignore="Autofill,RtlHardcoded" />
 
         <ImageView
             android:id="@+id/img_username"
@@ -78,8 +75,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
         android:textColor="#fff"
-        android:textSize="20dp"
-        tools:ignore="SpUsage"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,24 +97,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bungee"
-            android:text="Hi"
-            tools:ignore="HardcodedText,SpUsage"
+            android:text="@string/hi"
             android:textColor="#fff"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/hi"
+            android:layout_toRightOf="@+id/hi"
             android:fontFamily="@font/bungee"
-            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:ellipsize="end"
-            android:text="Name"
+            android:text="@string/name"
             android:maxLines="1"
             android:id="@+id/name"
-            tools:ignore="HardcodedText,RtlSymmetry,SpUsage"
             android:textColor="#fff"
-            android:textSize="30dp" />
+            android:textSize="30sp"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     </RelativeLayout>
 
@@ -127,10 +122,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:textColor="#fff"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:fontFamily="@font/med"
-        tools:ignore="HardcodedText,SpUsage"
-        android:text="Almost there, one last step"
+        android:text="@string/almost_there_one_last_step"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />

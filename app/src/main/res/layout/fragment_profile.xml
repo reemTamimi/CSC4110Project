@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/container"
     android:background="?attr/backgroundcolor"
-    tools:context=".user.UserProfile"
+    tools:context=".user.ProfileFragment"
     tools:ignore="Overdraw">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
@@ -21,11 +20,11 @@
             android:id="@+id/imageView3"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginStart="16dp"
             android:contentDescription="@string/contentdescription"
-            android:src="@drawable/ic_cancel"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_edit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,8 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="Profile"
-            android:fontFamily="@font/black"
             tools:ignore="HardcodedText,SpUsage"
+            android:fontFamily="@font/black"
             android:textSize="24dp"
             android:textColor="?attr/headertextcolor"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,11 +48,12 @@
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="32dp"
+            android:contentDescription="@string/contentdescription"
             android:layout_height="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:contentDescription="@string/contentdescription"
             android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,9 +73,9 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_below="@+id/pb"
-        android:id="@+id/cv"
         android:layout_width="match_parent"
         android:fillViewport="true"
+        android:id="@+id/cv"
         android:layout_height="wrap_content">
 
     <LinearLayout
@@ -83,9 +83,9 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout16"
@@ -105,8 +105,8 @@
                             android:id="@+id/bio_img"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_centerVertical="true"
                             android:contentDescription="@string/contentdescription"
+                            android:layout_centerVertical="true"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="7dp"
                             android:layout_marginBottom="10dp"
@@ -125,12 +125,11 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/med"
                             android:maxLines="3"
-
+                            android:text="Bio"
+                            tools:ignore="HardcodedText,SpUsage"
                             android:autoLink="all"
                             android:linksClickable="true"
                             android:textColorLink="#00BCD4"
-                            tools:ignore="HardcodedText,SpUsage"
-                            android:text="Bio"
                             android:textColor="?attr/textcolor"
                             android:textSize="18dp" />
                     </RelativeLayout>
@@ -149,9 +148,9 @@
                             android:layout_height="24dp"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="10dp"
+                            android:contentDescription="@string/contentdescription"
                             android:layout_marginTop="7dp"
                             android:layout_marginBottom="7dp"
-                            android:contentDescription="@string/contentdescription"
                             android:src="@drawable/ic_link" />
 
                         <TextView
@@ -164,19 +163,16 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="7dp"
                             android:layout_toEndOf="@+id/web_img"
-
                             android:autoLink="all"
                             android:linksClickable="true"
                             android:textColorLink="#00BCD4"
-                            android:clickable="true"
                             android:ellipsize="end"
                             android:fontFamily="@font/med"
                             android:maxLines="1"
-                            android:text="Link"
                             tools:ignore="HardcodedText,SpUsage"
+                            android:text="Link"
                             android:textColor="?attr/textcolor"
-                            android:textSize="18dp"
-                            android:focusable="true" />
+                            android:textSize="18dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -191,9 +187,9 @@
                             android:id="@+id/location_img"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
+                            android:contentDescription="@string/contentdescription"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="10dp"
-                            android:contentDescription="@string/contentdescription"
                             android:layout_marginTop="7dp"
                             android:layout_marginBottom="7dp"
                             android:src="@drawable/ic_map" />
@@ -211,8 +207,8 @@
                             android:fontFamily="@font/med"
                             android:maxLines="1"
                             android:text="Location"
-                            tools:ignore="HardcodedText,SpUsage"
                             android:textColor="?attr/textcolor"
+                            tools:ignore="HardcodedText,SpUsage"
                             android:textSize="18dp" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -220,7 +216,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     android:layout_marginTop="8dp"
                     android:visibility="invisible"
                     android:background="?attr/layoutcolor"
@@ -233,11 +229,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        tools:ignore="HardcodedText,SpUsage"
                         android:fontFamily="@font/bold"
                         android:text="Name"
                         android:textColor="?attr/textcolor"
                         android:textSize="22dp"
-                        tools:ignore="HardcodedText,SpUsage"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/circularImageView" />
@@ -248,8 +244,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/med"
                         android:text="username"
-                        tools:ignore="HardcodedText,SpUsage"
                         android:textColor="?attr/textcolor"
+                        tools:ignore="HardcodedText,SpUsage"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -259,8 +255,7 @@
                         android:id="@+id/constraintLayout2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView10">
@@ -299,8 +294,8 @@
                                     android:layout_below="@+id/noPost"
                                     android:layout_marginTop="3dp"
                                     android:fontFamily="@font/med"
-                                    tools:ignore="HardcodedText,SpUsage"
                                     android:text="Post"
+                                    tools:ignore="HardcodedText,SpUsage"
                                     android:textColor="?attr/textcolor"
                                     android:textSize="14dp" />
                             </RelativeLayout>
@@ -316,8 +311,8 @@
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
-                                android:id="@+id/followersly"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/followersly"
                                 android:layout_centerInParent="true"
                                 tools:ignore="UselessParent">
 
@@ -350,7 +345,6 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/relativeLayout12"
@@ -358,8 +352,8 @@
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 android:id="@+id/followingly"
+                                android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 tools:ignore="UselessParent">
 
@@ -381,13 +375,12 @@
                                     android:layout_below="@+id/noFollowing"
                                     android:layout_marginTop="3dp"
                                     android:fontFamily="@font/med"
-                                    tools:ignore="HardcodedText,SpUsage"
                                     android:text="Following"
                                     android:textColor="?textcolor"
+                                    tools:ignore="HardcodedText,SpUsage"
                                     android:textSize="14dp" />
                             </RelativeLayout>
                         </RelativeLayout>
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -400,102 +393,82 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="12dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:visibility="invisible"
+                    android:id="@+id/post"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/layoutcolor"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circular"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/avatar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/edittext_bg"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/post_textview_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                        app:layout_constraintStart_toEndOf="@+id/circular"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/post_meme"
+                            android:text="What's on your mind?"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="15dp"
+                            tools:ignore="HardcodedText,SpUsage"
+                            android:textColor="?attr/textcolor"
+                            android:fontFamily="@font/med"
+                            android:textSize="17dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView12"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@string/contentdescription"
+                        android:src="@drawable/ic_foto"
+                        android:layout_marginEnd="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-
-                        <Button
-                            android:id="@+id/follow"
-                            style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="35dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:background="@drawable/blue_btn_radius"
-                            android:fontFamily="@font/bold"
-                            android:text="Follow"
-                            android:textSize="16dp"
-                            tools:ignore="HardcodedText,SpUsage"
-                            android:textAllCaps="false"
-                            android:textColor="#fff"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <Button
-                            android:id="@+id/following"
-                            android:layout_width="0dp"
-                            android:layout_height="35dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:background="@drawable/border_blue_button"
-                            android:fontFamily="@font/bold"
-                            android:text="Following"
-                            android:visibility="gone"
-                            android:textSize="16dp"
-                            android:textAllCaps="false"
-                            android:textColor="?attr/following"
-                            tools:ignore="HardcodedText,SpUsage"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                        <Button
-                            android:id="@+id/message"
-                            style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="35dp"
-                            android:layout_marginStart="16dp"
-                            android:textSize="16dp"
-                            tools:ignore="HardcodedText,SpUsage"
-                            android:layout_marginEnd="16dp"
-                            android:background="@drawable/grey_button_radius"
-                            android:fontFamily="@font/bold"
-                            android:text="Message"
-                            android:visibility="gone"
-                            android:textAllCaps="false"
-                            android:textColor="#161F3D"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="@+id/guideline2"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintGuide_begin="205dp"
-                            app:layout_constraintStart_toStartOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:id="@+id/postView"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout16" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
 
 </RelativeLayout>
