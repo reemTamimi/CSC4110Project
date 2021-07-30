@@ -1,157 +1,84 @@
 package edu.wsu.chronicillnessawareness;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Paint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import edu.wsu.chronicillnessawareness.groups.GroupFragment;
+import edu.wsu.chronicillnessawareness.notifications.Token;
+import edu.wsu.chronicillnessawareness.user.HomeFragment;
+import edu.wsu.chronicillnessawareness.user.ProfileFragment;
+import edu.wsu.chronicillnessawareness.search.SearchFragment;
 
-import org.jetbrains.annotations.NotNull;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
-    private FirebaseUser currentUser;
-
-
+    BottomNavigationView bottomNavigationView;
+    Fragment selectedFragment = null;
+    private String userId;
+    SharedPref sharedPref;
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()){
+            setTheme(R.style.DarkTheme);
+        }else setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        bottomNavigationView=findViewById(R.id.bottomNav);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(nevigationSelected);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new HomeFragment()).commit();
+        updateToken(FirebaseInstanceId.getInstance().getToken());
 
     }
 
-    public void openJoinGroup(){
-        Intent intent = new Intent(this, JoinGroup.class);
-        startActivity(intent);
+    private void updateToken(String token){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token mToken = new Token(token);
+        ref.child(userId).setValue(mToken);
     }
 
-    public void openCreateGroup(){
-        Intent intent = new Intent(this, CreateGroup.class);
-        startActivity(intent);
-    }
 
-    public void openShareExperience(){
-        Intent intent = new Intent(this, ShareExperience.class);
-        startActivity(intent);
-    }
+    private final BottomNavigationView.OnNavigationItemSelectedListener nevigationSelected =
+            item -> {
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        selectedFragment = new HomeFragment();
 
-    // creating navigation bar for home, notifications, and profile
-    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod=new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-            Fragment fragment=null;
-            switch(menuItem.getItemId())
-            {
-                case R.id.home:
-                    fragment=new HomeFragment();
-                    break;
-
-                case R.id.notifications:
-                    fragment=new NotificationFragment();
-                    break;
-
-                case R.id.profile:
-                    fragment=new ProfileFragment();
-                    break;
-            }
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
-            return true;
-        }
-    };
-/*
-    private void RequestNewGroup(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
-        builder.setTitle("Enter Group Name :");
-
-        final EditText groupNameField = new EditText(MainActivity.this);
-        groupNameField.setHint("e.g. Coding Cafe");
-        builder.setView(groupNameField);
-
-        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String groupName = groupNameField.getText().toString();
-
-                if(TextUtils.isEmpty(groupName)){
-                    Toast.makeText(MainActivity.this, "Please write group name..", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_search:
+                        selectedFragment = new SearchFragment();
+                        break;
+                    case R.id.nav_group:
+                        selectedFragment = new GroupFragment();
+                        break;
+                    case R.id.nav_chat:
+                        break;
+                    case R.id.nav_user:
+                        SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+                        editor.putString("profileid", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+                        editor.apply();
+                        selectedFragment = new ProfileFragment();
+                        break;
                 }
-                else{
-                    //CreateNewGroup(groupName);
+                if (selectedFragment != null){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
                 }
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        builder.show();
-    }*/
-/*
-    private void CreateNewGroup(String groupName) {
-        RootRef.child("Groups").child(groupName).setValue("")
-                    .addOnCompleteListener(new OnCompleteListener<Void>(){
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task){
-                            if (task.isSuccessful())
-                            {
-                                Toast.makeText(MainActivity.this, groupName + "  group is Created Successfully...", Toast.LENGTH_SHORT).show();
-
-                            }                        }
-                    });
-    }*/
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.options_menu, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if(item.getItemId() == R.id.main_search_option) {
-
-        }
-        return true;
-    }
-/*
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if (currentUser == null){
-            SendUserToLoginActivity();
-        }
-    }
-
-    private void SendUserToLoginActivity() {
-        Intent loginIntent = new Intent(MainActivity.this, Login.class);
-        startActivity(loginIntent);
-    }*/
+                return true;
+            };
 }
+
+
