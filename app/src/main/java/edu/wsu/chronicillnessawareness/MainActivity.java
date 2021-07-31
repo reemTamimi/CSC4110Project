@@ -18,7 +18,6 @@ import edu.wsu.chronicillnessawareness.groups.GroupFragment;
 //import edu.wsu.chronicillnessawareness.notifications.Token;
 //import edu.wsu.chronicillnessawareness.search.SearchFragment;
 import edu.wsu.chronicillnessawareness.user.HomeFragment;
-import edu.wsu.chronicillnessawareness.user.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 

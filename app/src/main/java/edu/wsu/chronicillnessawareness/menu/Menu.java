@@ -26,7 +26,6 @@ import java.util.Objects;
 
 import edu.wsu.chronicillnessawareness.R;
 import edu.wsu.chronicillnessawareness.SharedPref;
-import edu.wsu.chronicillnessawareness.user.MyFollowing;
 import edu.wsu.chronicillnessawareness.welcome.IntroLast;
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
