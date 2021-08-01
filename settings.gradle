@@ -1,3 +1,7 @@
 include ':nativetemplates'
+
 rootProject.name='ChornicIllnessAwareness'
+
+rootProject.name='ChronicIllnessAwarness'
+
 include ':app'
