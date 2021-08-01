@@ -12,8 +12,7 @@
     <string name="send_email">Send Email</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="awarness">© Awarness</string>
-    <string name="phone_no">Phone no.</string>
+    <string name="awareness">© Awarness</string>
     <string name="email">Email</string>
     <string name="sign_in_or_sign_up_with">Sign in or sign up with ?</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
