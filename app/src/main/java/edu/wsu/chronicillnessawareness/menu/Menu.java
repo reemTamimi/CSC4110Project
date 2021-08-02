@@ -73,7 +73,7 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
         });
         invite.setOnClickListener(v -> {
-            String shareBody = "chronicillnessawareness -  Social Network" + " Download now on play store \nhttps://play.google.com/store/apps/details?id=edu.wsu.chronicillnessawareness";
+            String shareBody = "chronicillnessawareness -id=edu.wsu.chronicillnessawareness";
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/*");
             intent.putExtra(Intent.EXTRA_SUBJECT,"Subject Here");
